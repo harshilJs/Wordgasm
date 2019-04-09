@@ -1,4 +1,13 @@
 <resources>
-    <string name="app_name">Wordgasm 1.0</string>
+    <string name="app_name">Wordgasm</string>
     <string name="admob_app_id">ca-app-pub-3940256099942544~3347511713</string>
+
+    <string name="helper_text">Guess the word!</string>
+    <string name="score">Score:</string>
+    <string name="high_score">High Score:</string>
+    <string name="go">GO!</string>
+    <string name="pa">Play Again</string>
+    <string name="hint">Hint</string>
+
+
 </resources>

@@ -2,8 +2,8 @@ package com.harshil.gtw;
 
 import android.content.Intent;
 import android.graphics.Typeface;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
@@ -11,30 +11,30 @@ import android.widget.TextView;
 
 public class SplashScreen extends AppCompatActivity {
 
-    TextView sp_name;
-    ImageView sp_logo;
+    private Animation animation_1;
+    private Animation animation_3;
+    private ImageView sp_logo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash_screen);
+        setContentView(R.layout.splash_screen);
 
-        sp_logo = (ImageView) findViewById(R.id.sp_logo);
-        sp_name = (TextView) findViewById(R.id.sp_name);
+        //App Name with Typeface
+        TextView sp_name = findViewById(R.id.sp_name);
+        sp_name.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/MontserratMedium.ttf"));
 
-        Typeface custom_font = Typeface.createFromAsset(getAssets(), "fonts/MontserratMedium.ttf");
+        sp_logo = findViewById(R.id.sp_logo);
 
-        sp_name.setTypeface(custom_font);
-
-        final Animation animation_1 = AnimationUtils.loadAnimation(getBaseContext(),R.anim.rotate);
-        final Animation animation_2 = AnimationUtils.loadAnimation(getBaseContext(),R.anim.antirotate);
-        final Animation animation_3 = AnimationUtils.loadAnimation(getBaseContext(),R.anim.abc_fade_out);
+        animation_1 = AnimationUtils.loadAnimation(getBaseContext(), R.anim.rotate);
+        Animation animation_2 = AnimationUtils.loadAnimation(getBaseContext(), R.anim.antirotate);
+        animation_3 = AnimationUtils.loadAnimation(getBaseContext(), R.anim.fade_out);
 
         sp_logo.startAnimation(animation_2);
+
         animation_2.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
-
             }
 
             @Override
@@ -58,7 +58,7 @@ public class SplashScreen extends AppCompatActivity {
             public void onAnimationEnd(Animation animation) {
                 sp_logo.startAnimation(animation_3);
                 finish();
-                Intent i = new Intent(getBaseContext(),MainActivity.class);
+                Intent i = new Intent(getBaseContext(), MainActivity.class);
                 startActivity(i);
             }
 
@@ -67,6 +67,5 @@ public class SplashScreen extends AppCompatActivity {
 
             }
         });
-
     }
 }

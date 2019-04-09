@@ -1,6 +1,7 @@
 package com.harshil.gtw;
 
 
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -8,7 +9,6 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -26,12 +26,20 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView tv_word, tv_score, score, timer, tv_hint;
-    TextInputEditText edt_guess;
-    TextInputLayout til_guess;
-    Button bt_check, bt_new;
-    CountDownTimer count;
-    FloatingActionButton fab;
+    private TextView tv_word, tv_score, score, timer, tv_hint, hscore, tv_hscore;
+    private TextInputEditText edt_guess;
+    private TextInputLayout til_guess;
+    private FloatingActionButton fab;
+    private Button bt_check, bt_new;
+
+    private InterstitialAd mInterstitialAd;
+    private SharedPreferences preferences;
+
+    private CountDownTimer count;
+    private Integer counter = 0;
+    private String currentWord;
+    private Random r;
+
 
     String[] dictionary = {
             "wrong", "able", "acid", "automatic", "certain", "broken",
@@ -52,49 +60,47 @@ public class MainActivity extends AppCompatActivity {
 
     };
 
-    Random r;
-    String currentWord;
-    private int counter = 0;
-
-    private InterstitialAd mInterstitialAd;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Admob
         MobileAds.initialize(this, "ca-app-pub-8836857050636822~8139421031");
         mInterstitialAd = new InterstitialAd(this);
         mInterstitialAd.setAdUnitId("ca-app-pub-8836857050636822/8972068661");
 
-
-
-
-        TextView tx = (TextView) findViewById(R.id.tool_title);
+        //Toolbar
+        TextView tx = findViewById(R.id.tool_title);
         Typeface custom_font = Typeface.createFromAsset(getAssets(), "fonts/MontserratMedium.ttf");
         tx.setTypeface(custom_font);
 
-        tv_word = (TextView) findViewById(R.id.tv_word);
-        edt_guess = (TextInputEditText) findViewById(R.id.edt_guess);
-        bt_check = (Button) findViewById(R.id.bt_check);
-        bt_new = (Button) findViewById(R.id.bt_new);
-        tv_score = (TextView) findViewById(R.id.tv_score);
-        score = (TextView) findViewById(R.id.score);
-        til_guess = (TextInputLayout) findViewById(R.id.til_guess);
-        timer = (TextView) findViewById(R.id.timer);
-        tv_hint = (TextView) findViewById(R.id.hint);
-        fab = (FloatingActionButton) findViewById(R.id.fab);
+        //Ids
+        tv_word = findViewById(R.id.tv_word);
+        edt_guess = findViewById(R.id.edt_guess);
+        bt_check = findViewById(R.id.bt_check);
+        bt_new = findViewById(R.id.bt_new);
+        tv_score = findViewById(R.id.tv_score);
+        score = findViewById(R.id.score);
+        tv_hscore = findViewById(R.id.tv_hscore);
+        hscore = findViewById(R.id.hscore);
+        til_guess = findViewById(R.id.til_guess);
+        timer = findViewById(R.id.timer);
+        tv_hint = findViewById(R.id.hint);
+        fab = findViewById(R.id.fab);
 
+        //Font
         tv_word.setTypeface(custom_font);
         edt_guess.setTypeface(custom_font);
         bt_check.setTypeface(custom_font);
         bt_new.setTypeface(custom_font);
         tv_score.setTypeface(custom_font);
+        tv_hscore.setTypeface(custom_font);
         score.setTypeface(custom_font);
         timer.setTypeface(custom_font);
 
-
+        hscore.setText(String.valueOf(getHs()));
         r = new Random();
         newGame();
 
@@ -104,23 +110,27 @@ public class MainActivity extends AppCompatActivity {
                 if (edt_guess.getText().toString().equalsIgnoreCase(currentWord)) {
                     TastyToast.makeText(getApplicationContext(), "+1", TastyToast.LENGTH_LONG, TastyToast.SUCCESS);
                     counter++;
-                    int s = counter;
-                    score.setText(Integer.toString(s));
+                    score.setText(String.valueOf(counter));
                     count.cancel();
                     newGame();
 
-
+                    if (getHs() < counter) {
+                        setHs(counter);
+                        hscore.setText(String.valueOf(counter));
+                    }
                 } else {
                     counter = 0;
                     count.cancel();
+
                     TastyToast.makeText(getApplicationContext(), "Game over!", TastyToast.LENGTH_LONG, TastyToast.ERROR);
+
                     edt_guess.setText("");
                     score.setText("0");
+
                     edt_guess.setEnabled(false);
                     til_guess.setError("Incorrect word!");
                     bt_check.setVisibility(View.GONE);
                     bt_new.setVisibility(View.VISIBLE);
-
                 }
             }
         });
@@ -128,10 +138,9 @@ public class MainActivity extends AppCompatActivity {
         bt_new.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                count.cancel();
                 til_guess.setError(null);
-                newGame();
                 fab.show();
+                newGame();
             }
         });
 
@@ -165,8 +174,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void newGame() {
-
-
         currentWord = dictionary[r.nextInt(dictionary.length)];
         tv_word.setText(shuffleWord(currentWord));
         til_guess.setError(null);
@@ -194,6 +201,8 @@ public class MainActivity extends AppCompatActivity {
         }.start();
     }
 
+
+    //Ad Events
     private void showInterstitial() {
         if (mInterstitialAd.isLoaded()) {
             mInterstitialAd.show();
@@ -222,13 +231,29 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onAdClosed() {
-
-
                 edt_guess.setText(currentWord);
                 TastyToast.makeText(getApplicationContext(), "Hint Applied", TastyToast.LENGTH_LONG, TastyToast.SUCCESS);
 
 
             }
         });
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        count.cancel();
+    }
+
+    private boolean setHs(int hs) {
+        preferences = getApplicationContext().getSharedPreferences(getPackageName(), MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putInt("High", hs);
+        return editor.commit();
+    }
+
+    private Integer getHs() {
+        preferences = getApplicationContext().getSharedPreferences(getPackageName(), MODE_PRIVATE);
+        return preferences.getInt("High", 0);
     }
 }

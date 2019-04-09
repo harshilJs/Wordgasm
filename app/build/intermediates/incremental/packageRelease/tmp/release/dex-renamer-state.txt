@@ -1,0 +1,4 @@
+#Thu Apr 04 15:11:34 IST 2019
+base.0=D\:\\Anagram 1.1\\app\\build\\intermediates\\dex\\release\\mergeDexRelease\\out
+path.0=classes.dex
+renamed.0=classes.dex

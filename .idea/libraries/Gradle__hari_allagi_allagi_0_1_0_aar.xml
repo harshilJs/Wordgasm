@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: hari.allagi:allagi:0.1.0@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/allagi-0.1.0.aar/7c2484492d0c48f94518ce2daf5b319d/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/allagi-0.1.0.aar/7c2484492d0c48f94518ce2daf5b319d/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/hari.allagi/allagi/0.1.0/ed8f9870782d8912ca819db98a770684685a3452/allagi-0.1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

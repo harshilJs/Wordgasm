@@ -1,0 +1,11 @@
+#Internal package file, do not edit.
+#Thu Apr 04 15:11:34 IST 2019
+1.base=D\:\\Anagram 1.1\\app\\build\\intermediates\\dex\\release\\mergeDexRelease\\out
+0.baseType=DIRECTORY
+1.baseType=DIRECTORY
+count=2
+1.set=DEX
+0.path=fonts/MontserratMedium.ttf
+0.set=ASSET
+0.base=D\:\\Anagram 1.1\\app\\build\\intermediates\\merged_assets\\release\\mergeReleaseAssets\\out
+1.path=classes.dex

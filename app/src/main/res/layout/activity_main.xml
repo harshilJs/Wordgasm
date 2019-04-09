@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context="com.example.gtw.MainActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimaryDark"
+        android:elevation="4dp">
+
+        <TextView
+            android:id="@+id/tool_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Guess the word!"
+            android:textAlignment="center"
+            android:textColor="#fff"
+            android:textSize="18sp" />
+
+    </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+    <TextView
+        android:id="@+id/timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:text="10"
+        android:layout_below="@+id/appBar"
+        android:textStyle="bold"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/tv_word"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/timer"
+        android:text=""
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="20dp" />
+
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/til_guess"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/tv_word"
+        android:layout_marginRight="40dp"
+        android:textAlignment="center"
+        android:textColorHint="@color/colorPrimaryDark"
+        app:boxCornerRadiusBottomEnd="0dp"
+        app:boxCornerRadiusBottomStart="0dp"
+        app:boxCornerRadiusTopEnd="0dp"
+        app:boxCornerRadiusTopStart="0dp"
+        app:helperTextEnabled="true">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/edt_guess"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="5dp"
+            android:singleLine="true"
+            android:textAlignment="center"
+            android:textColor="#313131" />
+
+    </android.support.design.widget.TextInputLayout>
+
+
+        <LinearLayout
+            android:id="@+id/l_score"
+       android:layout_below="@+id/til_guess"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="90dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5sp"
+                android:text="Score:"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="0"
+                android:inputType="number"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="30sp" />
+
+        </LinearLayout>
+
+
+    <RelativeLayout
+
+        android:layout_below="@+id/l_score"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/bt_check"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:background="@color/colorPrimaryDark"
+            android:padding="10dp"
+            android:text="GO!"
+            android:textColor="#fff" />
+
+        <Button
+            android:id="@+id/bt_new"
+            android:layout_width="140dp"
+            android:layout_height="45dp"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:background="@color/colorPrimaryDark"
+            android:drawableLeft="@drawable/ic_refresh"
+            android:padding="10dp"
+            android:text="Play Again"
+            android:textColor="#fff"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_alignParentRight="true"
+        android:elevation="15dp"
+        android:backgroundTint="#fff"
+        android:src="@drawable/ic_wb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="25dp"/>
+
+    <TextView
+        android:id="@+id/hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="hint"
+        android:fontFamily="sans-serif-smallcaps"
+        android:textSize="16sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_below="@+id/fab"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="37.5sp"/>
+
+</RelativeLayout>

@@ -1,4 +1,4 @@
-com.harshil.loginform
+com.harshil.gtw
 anim abc_fade_in
 anim abc_fade_out
 anim abc_grow_fade_in_from_bottom
@@ -16,6 +16,7 @@ anim design_bottom_sheet_slide_in
 anim design_bottom_sheet_slide_out
 anim design_snackbar_in
 anim design_snackbar_out
+anim fade_out
 anim rotate
 animator design_appbar_state_list_animator
 animator design_fab_hide_motion_spec
@@ -698,6 +699,7 @@ color switch_thumb_material_dark
 color switch_thumb_material_light
 color switch_thumb_normal_material_dark
 color switch_thumb_normal_material_light
+color text_color
 color tooltip_background_dark
 color tooltip_background_light
 dimen abc_action_bar_content_inset_material
@@ -775,8 +777,6 @@ dimen abc_text_size_subhead_material
 dimen abc_text_size_subtitle_material_toolbar
 dimen abc_text_size_title_material
 dimen abc_text_size_title_material_toolbar
-dimen activity_horizontal_margin
-dimen activity_vertical_margin
 dimen cardview_compat_inset_shadow
 dimen cardview_default_elevation
 dimen cardview_default_radius
@@ -1135,6 +1135,7 @@ id groups
 id hint
 id home
 id homeAsUp
+id hscore
 id icon
 id icon_group
 id ifRoom
@@ -1144,6 +1145,7 @@ id infoView
 id invisible
 id italic
 id item_touch_helper_previous_elevation
+id l_hscore
 id l_score
 id labeled
 id largeLabel
@@ -1153,6 +1155,7 @@ id line3
 id linearLayout
 id listMode
 id list_item
+id ll_score
 id masked
 id media_actions
 id message
@@ -1260,6 +1263,7 @@ id transition_layout_save
 id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
+id tv_hscore
 id tv_score
 id tv_word
 id uniform
@@ -1321,7 +1325,6 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
-layout activity_splash_screen
 layout confusing_toast_layout
 layout default_toast_layout
 layout design_bottom_navigation_item
@@ -1360,6 +1363,7 @@ layout notification_template_part_time
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
+layout splash_screen
 layout success_toast_layout
 layout support_simple_spinner_dropdown_item
 layout warning_toast_layout
@@ -1414,8 +1418,13 @@ string character_counter_pattern
 string common_google_play_services_unknown_issue
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
+string go
+string helper_text
 string hide_bottom_view_on_scroll_behavior
+string high_score
+string hint
 string mtrl_chip_close_icon_content_description
+string pa
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
@@ -1428,6 +1437,7 @@ string s4
 string s5
 string s6
 string s7
+string score
 string search_menu_title
 string status_bar_notification_info_overflow
 style AlertDialog_AppCompat

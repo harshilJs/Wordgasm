@@ -97,10 +97,12 @@ public class MainActivity extends AppCompatActivity {
         bt_new.setTypeface(custom_font);
         tv_score.setTypeface(custom_font);
         tv_hscore.setTypeface(custom_font);
+        hscore.setTypeface(custom_font);
         score.setTypeface(custom_font);
         timer.setTypeface(custom_font);
 
         hscore.setText(String.valueOf(getHs()));
+        score.setText("0");
         r = new Random();
         newGame();
 

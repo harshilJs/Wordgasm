@@ -3,9 +3,9 @@ apply plugin: 'com.android.application'
 android {
     signingConfigs {
         freeConfig {
-            keyAlias 'Wordgasm'
+            keyAlias 'gtw'
             keyPassword 'Clab@2019#Harshil'
-            storeFile file('D:/Wordgasm 1.0/keystore/wordgasm.jks')
+            storeFile file('D:/Anagram 1.1/Key store/gtw.jks')
             storePassword 'Clab@Harshil#2019'
         }
     }
@@ -14,8 +14,8 @@ android {
         applicationId "com.harshil.gtw"
         minSdkVersion 16
         targetSdkVersion 28
-        versionCode 2
-        versionName "1.1"
+        versionCode 1
+        versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         signingConfig signingConfigs.freeConfig
     }

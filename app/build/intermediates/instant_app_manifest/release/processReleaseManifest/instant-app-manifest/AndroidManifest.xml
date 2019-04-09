@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.harshil.loginform"
+    package="com.harshil.gtw"
     android:targetSandboxVersion="2"
-    android:versionCode="2"
-    android:versionName="1.1" >
+    android:versionCode="1"
+    android:versionName="1.0" >
 
     <uses-sdk
         android:minSdkVersion="16"
@@ -43,7 +43,7 @@
 
         <provider
             android:name="com.google.android.gms.ads.MobileAdsInitProvider"
-            android:authorities="com.harshil.loginform.mobileadsinitprovider"
+            android:authorities="com.harshil.gtw.mobileadsinitprovider"
             android:exported="false"
             android:initOrder="100" />
 

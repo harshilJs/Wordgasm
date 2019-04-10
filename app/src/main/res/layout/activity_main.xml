@@ -86,6 +86,7 @@
         android:id="@+id/ll_score"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:layout_below="@id/til_guess"
         android:gravity="center_horizontal"
         android:orientation="horizontal">
@@ -168,7 +169,7 @@
             android:layout_height="45dp"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="15dp"
             android:background="@color/colorPrimaryDark"
             android:drawableStart="@drawable/ic_refresh"
             android:drawableLeft="@drawable/ic_refresh"

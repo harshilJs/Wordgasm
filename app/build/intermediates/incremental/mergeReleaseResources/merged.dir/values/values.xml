@@ -567,7 +567,7 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with <ns1:g example="Mail" id="application_name">%s</ns1:g></string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
-    <string name="admob_app_id">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="admob_app_id">ca-app-pub-8836857050636822~5270734017</string>
     <string name="app_name">Wordgasm</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
     <string name="bottom_sheet_behavior" translatable="false">android.support.design.widget.BottomSheetBehavior</string>

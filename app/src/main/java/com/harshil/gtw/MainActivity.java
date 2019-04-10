@@ -67,9 +67,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //Admob
-        MobileAds.initialize(this, "ca-app-pub-8836857050636822~8139421031");
+        MobileAds.initialize(this, "ca-app-pub-8836857050636822~5270734017");
         mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-8836857050636822/8972068661");
+        mInterstitialAd.setAdUnitId("ca-app-pub-8836857050636822/3395503428");
 
         //Toolbar
         TextView tx = findViewById(R.id.tool_title);

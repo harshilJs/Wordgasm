@@ -69,9 +69,11 @@
                 {
                     "source": "D:\\Anagram 1.1\\app\\src\\main\\res\\values\\strings.xml",
                     "from": {
-                        "startLines": "-1,-1,-1,-1,-1,-1,-1,-1",
-                        "startColumns": "-1,-1,-1,-1,-1,-1,-1,-1",
-                        "startOffsets": "-1,-1,-1,-1,-1,-1,-1,-1"
+                        "startLines": "2,-1,-1,-1,-1,-1,-1,-1",
+                        "startColumns": "4,-1,-1,-1,-1,-1,-1,-1",
+                        "startOffsets": "64,-1,-1,-1,-1,-1,-1,-1",
+                        "endColumns": "79,-1,-1,-1,-1,-1,-1,-1",
+                        "endOffsets": "139,-1,-1,-1,-1,-1,-1,-1"
                     },
                     "to": {
                         "startLines": "569,570,578,579,581,582,584,597",

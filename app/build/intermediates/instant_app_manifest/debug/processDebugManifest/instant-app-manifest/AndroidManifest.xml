@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.harshil.gtw"
     android:targetSandboxVersion="2"
-    android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionCode="2"
+    android:versionName="1.1" >
 
     <uses-sdk
         android:minSdkVersion="16"
@@ -34,7 +34,7 @@
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-8836857050636822~8139421031" />
+            android:value="ca-app-pub-8836857050636822~5270734017" />
 
         <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
         <activity

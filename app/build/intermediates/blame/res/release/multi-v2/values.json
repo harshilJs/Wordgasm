@@ -69,11 +69,11 @@
                 {
                     "source": "D:\\Anagram 1.1\\app\\src\\main\\res\\values\\strings.xml",
                     "from": {
-                        "startLines": "-1,1,7,4,6,9,8,5",
-                        "startColumns": "-1,4,4,4,4,4,4,4",
-                        "startOffsets": "-1,17,298,147,246,377,334,204",
-                        "endColumns": "-1,45,34,55,50,37,41,40",
-                        "endOffsets": "-1,58,328,198,292,410,371,240"
+                        "startLines": "2,-1,-1,-1,-1,-1,-1,-1",
+                        "startColumns": "4,-1,-1,-1,-1,-1,-1,-1",
+                        "startOffsets": "64,-1,-1,-1,-1,-1,-1,-1",
+                        "endColumns": "79,-1,-1,-1,-1,-1,-1,-1",
+                        "endOffsets": "139,-1,-1,-1,-1,-1,-1,-1"
                     },
                     "to": {
                         "startLines": "569,570,578,579,581,582,584,597",
@@ -102,11 +102,9 @@
                 {
                     "source": "D:\\Anagram 1.1\\app\\src\\main\\res\\values\\ic_launcher_background.xml",
                     "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "57",
-                        "endColumns": "69",
-                        "endOffsets": "122"
+                        "startLines": "-1",
+                        "startColumns": "-1",
+                        "startOffsets": "-1"
                     },
                     "to": {
                         "startLines": "216",
@@ -227,11 +225,9 @@
                 {
                     "source": "D:\\Anagram 1.1\\app\\src\\main\\res\\values\\colors.xml",
                     "from": {
-                        "startLines": "-1,-1,-1,6",
-                        "startColumns": "-1,-1,-1,4",
-                        "startOffsets": "-1,-1,-1,206",
-                        "endColumns": "-1,-1,-1,44",
-                        "endOffsets": "-1,-1,-1,246"
+                        "startLines": "-1,-1,-1,-1",
+                        "startColumns": "-1,-1,-1,-1",
+                        "startOffsets": "-1,-1,-1,-1"
                     },
                     "to": {
                         "startLines": "192,193,194,258",
